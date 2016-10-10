@@ -3,6 +3,7 @@ import React, { PropTypes } from 'react'
 import { routerRedux } from 'dva/router'
 import { connect } from 'dva'
 
+import MainLayout from '../components/MainLayout/MainLayout'
 import UserList from '../components/Users/UserList'
 import UserSearch from '../components/Users/UserSearch'
 import UserModal from '../components/Users/UserModal'
@@ -21,8 +22,6 @@ function Users({ location, dispatch, users }) {
     keyword,
     field,
     } = users
-
-  // let { field, keyword } = location.query
 
   const userSearchProps = {
     field,
@@ -91,11 +90,13 @@ function Users({ location, dispatch, users }) {
   const UserModalGen = () => <UserModal {...userModalProps} />
 
   return (
-    <div className="styles.normal">
-      <UserSearch {...userSearchProps} />
-      <UserList {...userListProps} />
-      <UserModalGen />
-    </div>
+    <MainLayout location={location}>
+      <div className="styles.normal">
+        <UserSearch {...userSearchProps} />
+        <UserList {...userListProps} />
+        <UserModalGen />
+      </div>
+    </MainLayout>
   )
 }
 
