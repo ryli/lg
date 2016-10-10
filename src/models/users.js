@@ -48,12 +48,11 @@ export default {
     },
     * create({ payload }, { call, put }) {
       yield put({ type: 'hideModal' })
-      yield put({ type: 'showModal' })
       const { data } = yield call(create, payload)
       if (data && data.success) {
         yield put({
           type: 'createSuccess',
-          payload,
+          payload: data.data[0],
         })
       }
     },
@@ -67,10 +66,9 @@ export default {
         })
       }
     },
-    * update({ payload }, { selete, call, put }) {
+    * update({ payload }, { select, call, put }) {
       yield put({ type: 'hideModal' })
-      yield put({ type: 'showModal' })
-      const id = yield selete(({ users }) => users.currentItem.id)
+      const id = yield select(({ users }) => users.currentItem.id)
       const newUser = { ...payload, id }
       const { data } = yield call(update, newUser)
       if (data && data.success) {
