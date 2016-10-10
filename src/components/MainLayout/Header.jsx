@@ -19,22 +19,22 @@ function Header({ location }) {
     >
       <Menu.Item key="home">
         <Link to="/">
-          <Icon type="home">Home</Icon>
+          <Icon type="home" />Home
         </Link>
       </Menu.Item>
       <Menu.Item key="users">
         <Link to="/users">
-          <Icon type="bars">Users</Icon>
+          <Icon type="bars" />Users
         </Link>
       </Menu.Item>
       <Menu.Item key="products">
         <Link to="/products">
-          <Icon type="bars">Products</Icon>
+          <Icon type="bars" />Products
         </Link>
       </Menu.Item>
       <Menu.Item key="404">
         <Link to="/page-you-dont-know">
-          <Icon type="frown-circle">404</Icon>
+          <Icon type="frown-circle" />404
         </Link>
       </Menu.Item>
       <Menu.Item key="antd">
