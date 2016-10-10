@@ -1,4 +1,4 @@
-import dva from 'dva'
+import dva, { connect } from 'dva'
 import './index.html'
 import './index.less'
 
@@ -18,6 +18,7 @@ const app = dva({
 // 3. Model
 //app.model(require('./models/example'));
 app.model(require('./models/products'))
+app.model(require('./models/users'))
 
 // 4. Router
 app.router(require('./router'))

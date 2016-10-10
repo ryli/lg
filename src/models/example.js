@@ -12,6 +12,7 @@ export default {
 
   effects: {
     * fetchRemote({ payload }, { call, put }) {
+      yield 1
     },
   },
 

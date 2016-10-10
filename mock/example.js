@@ -1,14 +1,12 @@
-'use strict';
-
 module.exports = {
 
   'GET /api/example': function (req, res) {
-    setTimeout(function () {
+    setTimeout(() => {
       res.json({
         success: true,
         data: ['foo', 'bar'],
-      });
-    }, 500);
+      })
+    }, 500)
   },
 
-};
+}
