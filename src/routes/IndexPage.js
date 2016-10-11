@@ -4,11 +4,12 @@ import { Link } from 'dva/router'
 import MainLayout from '../components/MainLayout/MainLayout'
 import styles from './IndexPage.less'
 
-function IndexPage(location) {
+function IndexPage(props, location) {
   return (
     <MainLayout location={location}>
       <div className={styles.normal}>
         <h1>Welcome to dva!</h1>
+        {props.children}
         <hr />
         <ul className={styles.list}>
           <li>To get started, edit <code>src/index.js</code> and save to reload.</li>

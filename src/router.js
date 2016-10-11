@@ -8,9 +8,10 @@ import NotFound from './routes/NotFound'
 export default function ({ history }) {
   return (
     <Router history={history}>
-      <Route path="/" component={IndexPage} />
-      <Route path="/products" component={Products} />
-      <Route path="/users" component={Users} />
+      <Route path="/" component={IndexPage}>
+        <Route path="products" component={Products} />
+        <Route path="users" component={Users} />
+      </Route>
       <Route path="*" component={NotFound} />
     </Router>
   )
