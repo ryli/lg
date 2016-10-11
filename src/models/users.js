@@ -10,6 +10,7 @@ export default {
     loading: false,
     current: 1,
     currentItem: {},
+    pageSize: 10,
     modalVisible: false,
     modalType: 'create',
     keyword: '',
@@ -33,12 +34,11 @@ export default {
     * query({ payload }, { call, put }) {
       yield put({ type: 'showLoading' })
       const { data } = yield call(query, parse(payload))
-      if (data) {
+      if (data && data.success) {
         yield put({
           type: 'querySuccess',
           payload: {
-            field: payload.field || 'name',
-            keyword: payload.keyword || '',
+            ...payload,
             list: data.data,
             total: data.page.total,
             current: data.page.current,

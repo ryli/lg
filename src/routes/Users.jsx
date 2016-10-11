@@ -14,6 +14,7 @@ function Users({ location, dispatch, users }) {
     loading,
     list,
     total,
+    pageSize,
     current,
     currentItem,
     modalVisible,
@@ -46,11 +47,22 @@ function Users({ location, dispatch, users }) {
     total,
     current,
     loading,
+    pageSize,
     onPageChange(page) {
-      dispatch(routerRedux.push({
-        pathname: '/users',
-        query: { page, field, keyword },
-      }))
+      // dispatch(routerRedux.push({
+      //   pathname: '/users',
+      //   query: { page, field, keyword },
+      // }))
+      dispatch({
+        type: 'users/query',
+        payload: { page, pageSize, field, keyword },
+      })
+    },
+    onShowSizeChange(current, pageSize) {
+      dispatch({
+        type: 'users/query',
+        payload: { page: current, pageSize, field, keyword },
+      })
     },
     onDeleteItem(id) {
       dispatch({

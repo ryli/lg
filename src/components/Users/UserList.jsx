@@ -5,9 +5,11 @@ import { Table, Popconfirm, Pagination } from 'antd'
 const UserList = ({
   total,
   current,
+  pageSize,
   loading,
   dataSource,
   onPageChange,
+  onShowSizeChange,
   onDeleteItem,
   onEditItem,
 }) => {
@@ -50,9 +52,12 @@ const UserList = ({
       <Pagination
         className="ant-table-pagination"
         total={total}
+        showTotal={total => `共 ${total} 项`}
         current={current}
-        pageSize={10}
+        pageSize={pageSize}
         onChange={onPageChange}
+        showSizeChanger
+        onShowSizeChange={onShowSizeChange}
       />
     </div>
   )
@@ -60,11 +65,13 @@ const UserList = ({
 
 UserList.propTypes = {
   onPageChange: PropTypes.func,
+  onShowSizeChange: PropTypes.func,
   onDeleteItem: PropTypes.func,
   onEditItem: PropTypes.func,
   dataSource: PropTypes.array,
   loading: PropTypes.any,
   total: PropTypes.any,
+  pageSize: PropTypes.number,
   current: PropTypes.any,
 }
 
