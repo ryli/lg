@@ -5,7 +5,7 @@ describe('example', () => {
 
   describe('reducer', () => {
     it('it should save', () => {
-      expect(example.reducers['example/save']({}, { payload: { a: 1 }})).toEqual({ a: 1 });
+      expect(example.reducers['fetch']({}, { payload: { a: 1 }})).toEqual({ a: 1 });
     });
   })
 });
