@@ -1,14 +1,21 @@
 import dva, { connect } from 'dva'
+import { browserHistory } from 'dva/router'
 import './index.html'
 import './index.less'
 
 // 1. Initialize
 const app = dva({
+  history: browserHistory,
+
   initialState: {
     products: [
       { name: 'dva', id: 1 },
       { name: 'antd', id: 2 },
     ],
+  },
+
+  onError(e) {
+    console.log(`ELEVEN Error:${e.message}`)
   },
 })
 
