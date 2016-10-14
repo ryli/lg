@@ -15,7 +15,7 @@ const app = dva({
   },
 
   onError(e) {
-    console.log(`ELEVEN Error:${e.message}`)
+    throw Error(`ELEVEN Error:${e.message}`)
   },
 })
 

@@ -6,6 +6,7 @@
   "dependencies": {
     "antd": "^2.0.1",
     "babel-plugin-import": "^1.0.1",
+    "classnames": "^2.2.5",
     "dva": "^1.0.0",
     "mockjs": "^1.0.1-beta3",
     "qs": "^6.2.1",
