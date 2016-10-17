@@ -6,7 +6,7 @@ import styles from './IndexPage.less'
 
 function IndexPage({ location, children }) {
   const indexPage = (
-    <h1>Welcome to POS System.</h1>
+    <h1>Happy Hacking!</h1>
   )
 
   return (
