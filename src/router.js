@@ -17,10 +17,22 @@ const willLeave = (nextState) => {
 export default function ({ history }) {
   return (
     <Router history={history}>
-      <Route path="/" component={IndexPage}>
+      <Route path="/" component={IndexPage} />
+
+      <Route path="/home" component={IndexPage}>
         <Route path="products" component={Products} onEnter={requireAuth} onLeave={willLeave} />
         <Route path="users" component={Users} />
       </Route>
+
+      <Route path="/home2" component={IndexPage}>
+        <Route path="products" component={Products} onEnter={requireAuth} onLeave={willLeave} />
+        <Route path="users" component={Users} />
+      </Route>
+
+      <Route path="/404" component={IndexPage}>
+        <Route path="not-found" component={NotFound} />
+      </Route>
+
       <Route path="*" component={NotFound} />
     </Router>
   )

@@ -21,7 +21,8 @@
     "no-useless-computed-key": [0],
     "no-underscore-dangle": [0],
     "func-names": [1, "never"],
-    "no-extra-boolean-cast": [0]
+    "no-extra-boolean-cast": [0],
+    "no-plusplus": [0],
   },
   "ecmaFeatures": {
     "experimentalObjectRestSpread": true
