@@ -23,8 +23,8 @@ class MainLayout extends Component {
   render() {
     const collapse = this.state.collapse
     const logo = (
-      !collapse ? <img style={{ width: 150, marginTop: -8 }} src="//buding-img.b0.upaiyun.com/weiche/2014/11/06/d09282a21bd48a6e00e3d66f5015f35d.png" role="presentation" /> :
-        <img style={{ width: 30 }} src="//buding-img.b0.upaiyun.com/weiche/2014/11/06/f9dabad8c902daa26226a71407cbcc79.png" alt="" />
+      !collapse ? <img style={{ width: 150, marginTop: -8 }} src="" role="presentation" /> :
+        <img style={{ width: 30 }} src="" alt="" />
     )
 
     return (
